@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+
+interface dataInput {
+  name: string;
+  iconRef: string;
+}
 
 @Component({
   selector: 'app-skill-card',
@@ -7,5 +12,5 @@ import { Component } from '@angular/core';
   styleUrl: './skill-card.css'
 })
 export class SkillCard {
-
+  data = input<dataInput>({name: 'Unknown!', iconRef: ''})
 }

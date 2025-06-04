@@ -1,1 +1,32 @@
-<p>skills works!</p>
+<div class="m-8 mt-0">
+  <h3 class="mb-8 text-5xl">My Latest Projects</h3>
+  <div>
+    <h4 class="text-center text-4xl mb-8 ">Languages</h4>
+
+    <div class="flex gap-4 m-auto w-fit">
+      @for (language of languages; track language.name) {
+        <app-skill-card [data]="language" />
+      }
+    </div>
+  </div>
+
+  <div>
+    <h4 class="text-center text-4xl my-8">Front-End Tools</h4>
+
+    <div class="flex gap-4 m-auto w-fit">
+      @for (tool of frontEndTools; track tool.name) {
+        <app-skill-card [data]="tool" />
+      }
+    </div>
+  </div>
+
+  <div>
+    <h4 class="text-center text-4xl my-8">Back-End Tools</h4>
+
+    <div class="flex gap-4 m-auto w-fit">
+      @for (tool of backEndTools; track tool.name) {
+        <app-skill-card [data]="tool" />
+      }
+    </div>
+  </div>  
+</div>
