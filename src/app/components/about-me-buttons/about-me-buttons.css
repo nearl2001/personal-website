@@ -1,0 +1,11 @@
+a {
+  transition: transform 0.2s ease-out;
+}
+
+a:hover {
+  transform: scale(1.05);
+}
+
+.iconButton:hover {
+  transform: scale(1.15);
+}
