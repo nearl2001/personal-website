@@ -1,10 +1,30 @@
-<div class="bg-black">
-  <img ngSrc="hero.webp" width="3994" height="3020" priority class="w-screen h-screen object-cover object-center lg:object-[center_30%] block relative opacity-80 z-20">
-  <div class="absolute z-30 top-0 left-0 w-full h-full flex justify-center items-center">
-    <div class="h-fit mt-[10vh]">
-      <p class="text-3xl md:text-4xl text-white">Hello! I am a</p>
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl text-white mb-2 text-center">Full Stack Application Developer</h1>
-      <p class="text-3xl md:text-4xl text-right text-white">Welcome to my Website</p>
+<div class="bg-black block h-screen">
+  <img
+    ngSrc="hero.webp"
+    fill
+    priority
+    class="w-screen h-screen object-cover object-center lg:object-[center_30%] block absolute opacity-80 z-20"
+  />
+  <div
+    class="absolute z-30 top-0 left-0 w-full h-full flex justify-center items-center"
+  >
+    <div class="h-fit mt-[10vh] typewriter mx-[4vw]">
+      <div class="text-3xl md:text-4xl text-white ">
+        <span #typedText1></span
+        ><span #cursor1 class="cursor">|</span>
+      </div>
+
+      <div
+        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl text-white mb-2 text-center"
+      >
+        <span #typedTextMain></span>
+        <span #cursorMain class="hidden cursor">|</span>
+      </div>
+
+      <div class="text-3xl md:text-4xl text-right text-white">
+        <span #typedText2></span>
+        <span #cursor2 class="hidden cursor">|</span>
+      </div>
     </div>
   </div>
 </div>
