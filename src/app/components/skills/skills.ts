@@ -19,32 +19,33 @@ import { CustomWiggle } from "gsap/CustomWiggle";
 })
 export class Skills {
   languages = [
-    { name: 'TypeScript', iconRef: '' },
-    { name: 'JavaScript', iconRef: '' },
-    { name: 'Python3', iconRef: '' },
-    { name: 'Bash', iconRef: '' },
-    { name: 'Java', iconRef: '' },
-    { name: 'C/C++', iconRef: '' },
-    { name: 'C#', iconRef: '' },
+    { name: 'TypeScript', iconRef: 'icons8-typescript.svg' },
+    { name: 'JavaScript', iconRef: 'icons8-javascript.svg' },
+    { name: 'Python3', iconRef: 'icons8-python.svg' },
+    { name: 'Bash', iconRef: 'icons8-bash.svg' },
+    { name: 'Java', iconRef: 'icons8-java.svg' },
+    { name: 'C/C++', iconRef: 'icons8-c++.svg' },
+    { name: 'C#', iconRef: 'icons8-c-sharp-logo-2.svg' },
   ];
 
   frontEndTools = [
-    { name: 'React', iconRef: '' },
-    { name: 'Angular', iconRef: '' },
-    { name: 'HTMX', iconRef: '' },
-    { name: 'Android Native', iconRef: '' },
-    { name: 'Tailwind', iconRef: '' },
-    { name: 'Pico CSS', iconRef: '' },
+    { name: 'React', iconRef: 'icons8-react.svg' },
+    { name: 'Angular', iconRef: 'icons8-angular.svg' },
+    { name: 'Tailwind', iconRef: 'icons8-tailwind-css.svg' },
+    { name: 'HTML/CSS', iconRef: 'icons8-html.svg' },
+    { name: 'HTMX', iconRef: 'htmx.svg' },
+    { name: 'Browser Native', iconRef: 'icons8-chromium.svg' },
+    { name: 'Android Native', iconRef: 'icons8-android.svg' },
   ];
 
   backEndTools = [
-    { name: 'NodeJS', iconRef: '' },
-    { name: 'Docker', iconRef: '' },
-    { name: 'SQL', iconRef: '' },
-    { name: 'Redis', iconRef: '' },
-    { name: 'AWS Services', iconRef: '' },
-    { name: 'RHEL', iconRef: '' },
-    { name: 'GH Actions', iconRef: '' },
+    { name: 'NodeJS', iconRef: 'icons8-nodejs.svg' },
+    { name: 'Docker', iconRef: 'icons8-docker.svg' },
+    { name: 'SQL', iconRef: 'icons8-sql-64.png' },
+    { name: 'Redis', iconRef: 'icons8-redis.svg' },
+    { name: 'AWS Services', iconRef: 'icons8-amazon-web-services.svg' },
+    { name: 'RHEL', iconRef: 'icons8-red-hat-64.png' },
+    { name: 'GH Actions', iconRef: 'icons8-github.svg' },
   ];
 
   @ViewChild('skillsHeader') skillsHeader!: ElementRef;

@@ -1,4 +1,5 @@
 import { Component, input } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 
 interface dataInput {
   name: string;
@@ -7,7 +8,7 @@ interface dataInput {
 
 @Component({
   selector: 'app-skill-card',
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './skill-card.html',
   styleUrl: './skill-card.css'
 })
