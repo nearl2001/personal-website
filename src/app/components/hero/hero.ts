@@ -55,7 +55,7 @@ export class Hero implements AfterViewInit {
         typedElMain.textContent += char;
       });
     });
-    const ttcMain = ttcFirst + (mainChars.length * secondsPerChar) + 1
+    const ttcMain = ttcFirst + (mainChars.length * secondsPerChar)
 
     gsap.delayedCall(ttcMain, () => {
       cursorElMain.style.display = 'none';
@@ -63,7 +63,7 @@ export class Hero implements AfterViewInit {
     })
 
     secondChars.forEach((char, index) => {
-      gsap.delayedCall((index * secondsPerChar) + ttcMain, () => {
+      gsap.delayedCall((index * secondsPerChar) + ttcMain + 0.5, () => {
         typedEl2.textContent += char;
       });
     })

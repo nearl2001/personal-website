@@ -3,6 +3,10 @@
   display: inline-block;
 }
 
+.bigText {
+  font-family: "Ubuntu Condensed", sans-serif;
+}
+
 .cursor {
   animation: blink 1s infinite;
 }
