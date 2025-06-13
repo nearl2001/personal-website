@@ -1,12 +1,12 @@
 <div class="m-8">
-  <h3 class="mb-8 text-5xl">My Latest Projects</h3>
+  <h2 #projectHeader class="mb-8 text-5xl">My Latest Projects</h2>
   <div
     class="flex gap-4 overflow-x-auto flex-nowrap snap-x snap-mandatory scroll-smooth space-x-4 pb-4 custom-scrollbar"
   >
     @for (card of cards; track card.name) {
-      <app-project-card [data]="card" />
+      <app-project-card #projectCard [data]="card" />
     } @empty {
-    <li>There are no items.</li>
+    <li>There are no items... Yet.</li>
     }
   </div>
 </div>
