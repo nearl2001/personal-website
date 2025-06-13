@@ -9,7 +9,6 @@ import { Footer } from './components/footer/footer';
   selector: 'app-root',
   imports: [Hero, Navbar, Projects, Skills, Footer],
   templateUrl: './app.html',
-  styleUrl: './app.css'
 })
 export class App {
   protected title = 'personal-website';
