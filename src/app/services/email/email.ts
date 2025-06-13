@@ -10,40 +10,49 @@ export interface MessageResponse {
   providedIn: 'root',
 })
 export class Email {
-  private emailjsTemplateId = 'YOUR_TEMPLATE_ID';
-  private emailjsServiceId = 'YOUR_USER_ID';
-  private emailjsPublicKey = 'YOUR_PUBLIC_KEY';
+  private templateId = 'template_vtq10dw';
+  private serviceId = 'service_nounjqs';
+  private publicKey = 'Ef1uFWd7j2XXDfqSF';
 
   constructor() {}
 
-  sendMessage(name: string, email: string, message: string): Promise<MessageResponse> {
+  async sendMessages(
+    name: string,
+    email: string,
+    message: string
+  ): Promise<MessageResponse> {
     const templateParams = {
       name,
       email,
       message,
     };
 
-    return emailjs
-      .send(this.emailjsServiceId, this.emailjsTemplateId, templateParams, {
-        publicKey: this.emailjsPublicKey,
-      })
-      .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
-        return { message: 'Message sent successfully', success: true };
-      })
-      .catch((error) => {
-        console.log(error);
-        if (error instanceof EmailJSResponseStatus) {
-          return {
-            message: `Error sending message: ${error.text}`,
-            success: false,
-          };
-        } else {
-          return {
-            message: 'An unknown error occurred while sending message.',
-            success: false,
-          };
+    // Send message to self. This will also handle auto-reply confirmation to the user
+    try {
+      const response = await emailjs.send(
+        this.serviceId,
+        this.templateId,
+        templateParams,
+        {
+          publicKey: this.publicKey,
         }
-      })
+      );
+      console.log('SUCCESS!', response.status, response.text);
+    } catch (error) {
+      console.log(error);
+      if (error instanceof EmailJSResponseStatus) {
+        return {
+          message: `Error sending message: ${error.text}. Try again later or email me directly at nikolasaearl@gmail.com.`,
+          success: false,
+        };
+      } else {
+        return {
+          message: 'An unknown error occurred while sending. Feel free to email me directly at nikolasaearl@gmail.com, or try again later.',
+          success: false,
+        };
+      }
+    }
+
+    return { message: 'Message sent successfully', success: true };
   }
 }
