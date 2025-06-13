@@ -1,31 +1,31 @@
 <div class="m-8 mt-0 mb-14">
-  <h3 class="text-5xl">My Skills</h3>
+  <h2 #skillsHeader class="text-5xl">My Skills</h2>
   <div>
-    <h4 class="text-center text-4xl mb-8 ">Languages</h4>
+    <h4 #sectionHeader class="text-center text-4xl mb-8 ">Languages</h4>
 
     <div class="flex gap-4 m-auto w-fit">
       @for (language of languages; track language.name) {
-        <app-skill-card [data]="language" />
+        <app-skill-card #languageCard [data]="language" />
       }
     </div>
   </div>
 
   <div>
-    <h4 class="text-center text-4xl my-8">Front-End Tools</h4>
+    <h4 #sectionHeader class="text-center text-4xl my-8">Front-End Tools</h4>
 
     <div class="flex gap-4 m-auto w-fit">
       @for (tool of frontEndTools; track tool.name) {
-        <app-skill-card [data]="tool" />
+        <app-skill-card #frontEndCard [data]="tool" />
       }
     </div>
   </div>
 
   <div>
-    <h4 class="text-center text-4xl my-8">Back-End Tools</h4>
+    <h4 #sectionHeader class="text-center text-4xl my-8">Back-End Tools</h4>
 
     <div class="flex gap-4 m-auto w-fit">
       @for (tool of backEndTools; track tool.name) {
-        <app-skill-card [data]="tool" />
+        <app-skill-card #backEndCard [data]="tool" />
       }
     </div>
   </div>  

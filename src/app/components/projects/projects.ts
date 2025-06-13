@@ -21,7 +21,7 @@ export class Projects {
     {
       pic1Ref: 'picRef.jpg',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        'TODO: Add a mouse hover that shows an animated link hint at the top corner that says click to go to, and make the card itself be an a href to the project url if one applies',
       name: 'Dummy hehe1',
     },
     {
@@ -52,7 +52,6 @@ export class Projects {
   ngAfterViewInit() {
     gsap.registerPlugin(ScrollTrigger)
 
-    // Animate the header
     if (this.projectHeader != null) {
       gsap.from(this.projectHeader.nativeElement, {
         opacity: 0,
@@ -66,7 +65,6 @@ export class Projects {
       });
     }
 
-    // Animate each card with GSAP
     const elements = this.cardElements.map(el => el.nativeElement);
 
     gsap.from(elements, {
@@ -77,7 +75,7 @@ export class Projects {
       ease: 'power3.out',
       scrollTrigger: {
         trigger: this.projectHeader.nativeElement,
-        start: 'bottom 80%',
+        start: 'top 95%',
         toggleActions: 'play none none reset',
       },
     });
