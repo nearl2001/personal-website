@@ -8,8 +8,8 @@ import {
 import { SkillCard } from '../skill-card/skill-card';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { CustomEase } from "gsap/CustomEase";
-import { CustomWiggle } from "gsap/CustomWiggle";
+import { CustomEase } from 'gsap/CustomEase';
+import { CustomWiggle } from 'gsap/CustomWiggle';
 
 @Component({
   selector: 'app-skills',
@@ -62,31 +62,47 @@ export class Skills {
   ngAfterViewInit() {
     gsap.registerPlugin(ScrollTrigger, CustomEase, CustomWiggle);
 
-    CustomWiggle.create("myWiggle", {wiggles: 6});
+    CustomWiggle.create('myWiggle', { wiggles: 6 });
 
-    gsap.from(this.skillsHeader.nativeElement, {
-      opacity: 0,
-      duration: 1,
-      ease: 'power1.in',
-      scrollTrigger: {
-        trigger: this.skillsHeader.nativeElement,
-        start: 'top 90%',
-        toggleActions: 'play none none reverse',
-      },
-    });
-
-    // Animate each section header
-    this.sectionHeaders.forEach((header) => {
-      gsap.from(header.nativeElement, {
+    if (ScrollTrigger.isTouch) {
+      gsap.from(this.skillsHeader.nativeElement, {
         opacity: 0,
-        duration: 0.8,
-        ease: 'power2.out',
+        duration: 1,
+        ease: 'power1.in',
+      });
+    } else {
+      gsap.from(this.skillsHeader.nativeElement, {
+        opacity: 0,
+        duration: 1,
+        ease: 'power1.in',
         scrollTrigger: {
-          trigger: header.nativeElement,
+          trigger: this.skillsHeader.nativeElement,
           start: 'top 90%',
           toggleActions: 'play none none reverse',
         },
       });
+    }
+
+    // Animate each section header
+    this.sectionHeaders.forEach((header) => {
+      if (ScrollTrigger.isTouch) {
+        gsap.from(header.nativeElement, {
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+        });
+      } else {
+        gsap.from(header.nativeElement, {
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: header.nativeElement,
+            start: 'top 90%',
+            toggleActions: 'play none none reverse',
+          },
+        });
+      }
     });
 
     // Animate the skill cards with "hop" effect
@@ -112,18 +128,28 @@ export class Skills {
       elements.reverse();
     }
 
-    gsap.from(elements, {
-      y: 100,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'back.out(1.7)',
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: elements[0]?.parentElement,
-        start: 'top 90%',
-        toggleActions: 'play none none reverse',
-      },
-    });
+    if (ScrollTrigger.isTouch) {
+      gsap.from(elements, {
+        y: 100,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'back.out(1.7)',
+        stagger: 0.2
+      });
+    } else {
+      gsap.from(elements, {
+        y: 100,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'back.out(1.7)',
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: elements[0]?.parentElement,
+          start: 'top 90%',
+          toggleActions: 'play none none reverse',
+        },
+      });
+    }
   }
 
   private setupHoverJiggle(cards: QueryList<ElementRef>) {
@@ -151,7 +177,7 @@ export class Skills {
         scale: 1.1,
         ease: 'power2.out',
         duration: 0.5,
-        paused: true
+        paused: true,
       });
 
       el.addEventListener('mouseenter', () => {
@@ -163,8 +189,8 @@ export class Skills {
           scale: 1,
           duration: 0.5,
           ease: 'power2.out',
-        })
-      })
+        });
+      });
     });
   }
 }
