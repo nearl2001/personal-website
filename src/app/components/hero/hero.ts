@@ -15,12 +15,19 @@ export class Hero implements AfterViewInit {
   @ViewChild('cursor1') cursor1!: ElementRef;
   @ViewChild('cursorMain') cursorMain!: ElementRef;
   @ViewChild('cursor2') cursor2!: ElementRef;
+  @ViewChild('heroImage') heroImage!: ElementRef;
 
   textToType1 = 'Hello! I am a';
   textToTypeMain = 'Full Stack Application Developer'
   textToType2 = 'Welcome to my Website'
 
   ngAfterViewInit(): void {
+    gsap.from(this.heroImage.nativeElement, {
+      opacity: 0,
+      duration: 1,
+      ease: 'power2.out',
+    })
+
     this.startTypingEffect();
   }
 

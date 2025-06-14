@@ -5,7 +5,7 @@ interface dataInput {
   name: string;
   description: string;
   pic1Ref: string;
-  pic2Ref?: string;
+  pic2Ref: string;
 }
 
 @Component({
@@ -15,5 +15,5 @@ interface dataInput {
   styleUrl: './project-card.css'
 })
 export class ProjectCard {
-  data = input<dataInput>({name: 'Unknown!', description: 'Not Passed Through!', pic1Ref: 'urmom.jpg', pic2Ref: ''})
+  data = input<dataInput>({name: 'Unknown!', description: 'Not Passed Through!', pic1Ref: 'urmom.jpg', pic2Ref: 'lol.jpg'})
 }

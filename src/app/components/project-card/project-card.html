@@ -1,14 +1,16 @@
-<div class="bg-gray-200 rounded-xl p-4 flex flex-nowrap flex-col w-4xl max-w-[85vw]">
+<div
+  class="bg-gray-200 rounded-xl p-4 flex flex-nowrap flex-col w-4xl max-w-[85vw]"
+>
   <h4 class="text-2xl">{{ data().name }}</h4>
-  <div class="flex">
-    <div class="">
-      <!-- <img [ngSrc]="data().pic1Ref" /> -->
-      <p class="">{{data().description}}</p>
-    </div>
-    @if (data().pic2Ref != null && data().pic2Ref != '') {
-      <div class="">
-        <!-- <img [ngSrc]="data().pic2Ref ?? ''" /> -->
+  <div class="flex flex-col lg:flex-row gap-4 pr-4">
+    <div class="basis-0.5 grow-20 flex flex-col">
+      <div class="h-70 p-2">
+        <img [ngSrc]="data().pic1Ref" fill class="object-contain !relative pt-2"/>
       </div>
-    }
+      <p class="p-4">{{data().description}}</p>
+    </div>
+    <div class="grow-1 hidden lg:inline">
+      <img [ngSrc]="data().pic2Ref" fill class="object-contain !relative"/>
+    </div>
   </div>
 </div>
