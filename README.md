@@ -166,7 +166,7 @@ assets, and tools.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[build-shield]: https://img.shields.io/github/actions/workflow/status/nearl2001/personal-website/todo-workflow.svg?style=for-the-badge
+[build-shield]: https://img.shields.io/github/actions/workflow/status/nearl2001/personal-website/deploy.yaml.svg?style=for-the-badge
 [build-url]: https://github.com/nearl2001/personal-website/actions
 [last-commit-shield]: https://img.shields.io/github/last-commit/nearl2001/personal-website.svg?style=for-the-badge
 [last-commit-url]: https://github.com/nearl2001/personal-website/commits/master
