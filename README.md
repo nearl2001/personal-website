@@ -78,6 +78,8 @@ before setting out to work on building it out.
 
 * [![Angular][Angular.io]][Angular-url]
 * [![Tailwind][Tailwind.dev]][Tailwind-url]
+* [![Figma][Figma.com]][Figma-url]
+* [![GitHub Pages][Github.pages]][Pages-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -96,25 +98,18 @@ dependency files.
 
 ### Installation
 
-1. TODO: Write this out once we have a more solid setup
-<!-- 1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/nearl2001/personal-website.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-5. Change git remote url to avoid accidental pushes to base project
+3. Run the dev script to host a local Angular server with the ng cli
    ```sh
-   git remote set-url origin github_username/repo_name
-   git remote -v # confirm the changes
-   ``` -->
+   npm run dev
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -157,9 +152,13 @@ Email - [nikolasaearl@gmail.com](mailto:nikolasaearl@gmail.com)
 Here are some resources I used in the creation of this project, including things like design inspiration,
 assets, and tools.
 
-* [Yusef Rayyan's Personal Site](yusefturin.vercel.app) - Main design inspiration
+* [Yusef Rayyan's Personal Site](https://yusefturin.vercel.app) - Main design inspiration
 * [Img Shields](https://shields.io) - Shields in this README
 * [GitHub Pages](https://pages.github.com) - Hosting for this site
+* [Icons8](https://icons8.com) - Many Icons used in this project
+* [GSAP](https://gsap.com) - Animation library used in this project, it's amazing
+* [Continue](https://www.continue.dev) - VSCode extension for code complete and local LLM integrations
+* [Ollama, Llama 3.1, Deepseek Coder V2, and Qwen2.5-Coder](https://ollama.ai) - LLMs used to support development
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -181,3 +180,7 @@ assets, and tools.
 [Angular-url]: https://angular.io/
 [Tailwind.dev]: https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=000000
 [Tailwind-url]: https://tailwindcss.com/
+[Figma.com]: https://img.shields.io/badge/Figma-2962FF?style=for-the-badge&logo=figma&logoColor=white
+[Figma-url]: https://figma.com/
+[Github.pages]: https://img.shields.io/badge/Pages-222222?style=for-the-badge&logo=github&logoColor=white
+[Pages-url]: https://pages.github.com/
