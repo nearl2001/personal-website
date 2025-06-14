@@ -36,9 +36,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: List files in dist folder
-        run: tree ./
-
       - name: Upload artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
