@@ -64,45 +64,29 @@ export class Skills {
 
     CustomWiggle.create('myWiggle', { wiggles: 6 });
 
-    if (ScrollTrigger.isTouch) {
-      gsap.from(this.skillsHeader.nativeElement, {
+    gsap.from(this.skillsHeader.nativeElement, {
+      opacity: 0,
+      duration: 1,
+      ease: 'power1.in',
+      scrollTrigger: {
+        trigger: this.skillsHeader.nativeElement,
+        start: 'top 90%',
+        toggleActions: 'play none none reverse',
+      },
+    });
+
+    // Animate each section header
+    this.sectionHeaders.forEach((header) => {
+      gsap.from(header.nativeElement, {
         opacity: 0,
-        duration: 1,
-        ease: 'power1.in',
-      });
-    } else {
-      gsap.from(this.skillsHeader.nativeElement, {
-        opacity: 0,
-        duration: 1,
-        ease: 'power1.in',
+        duration: 0.8,
+        ease: 'power2.out',
         scrollTrigger: {
-          trigger: this.skillsHeader.nativeElement,
+          trigger: header.nativeElement,
           start: 'top 90%',
           toggleActions: 'play none none reverse',
         },
       });
-    }
-
-    // Animate each section header
-    this.sectionHeaders.forEach((header) => {
-      if (ScrollTrigger.isTouch) {
-        gsap.from(header.nativeElement, {
-          opacity: 0,
-          duration: 0.8,
-          ease: 'power2.out',
-        });
-      } else {
-        gsap.from(header.nativeElement, {
-          opacity: 0,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: header.nativeElement,
-            start: 'top 90%',
-            toggleActions: 'play none none reverse',
-          },
-        });
-      }
     });
 
     // Animate the skill cards with "hop" effect
@@ -128,28 +112,18 @@ export class Skills {
       elements.reverse();
     }
 
-    if (ScrollTrigger.isTouch) {
-      gsap.from(elements, {
-        y: 100,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'back.out(1.7)',
-        stagger: 0.2
-      });
-    } else {
-      gsap.from(elements, {
-        y: 100,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'back.out(1.7)',
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: elements[0]?.parentElement,
-          start: 'top 90%',
-          toggleActions: 'play none none reverse',
-        },
-      });
-    }
+    gsap.from(elements, {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'back.out(1.7)',
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: elements[0]?.parentElement,
+        start: 'top 90%',
+        toggleActions: 'play none none reverse',
+      },
+    });
   }
 
   private setupHoverJiggle(cards: QueryList<ElementRef>) {
